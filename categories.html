@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple 3D Models with AR</title>
+    <link rel="stylesheet" href="assest/css/categories.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Furniture Reviews</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="review.html">Reviews</a>
+        </nav>
+    </header>
+    <h1>Model 3D & AR</h1>
+
+    <!-- Container Utama -->
+    <div id="canvas-container">
+        <!-- Model 1 -->
+        <div class="model-container" id="model1-container">
+            <img src="assest/images/rak.png" alt="gambar-model" />
+            <button class="ar-button" data-model="rak.glb">Lihat dalam AR</button>
+        </div>
+        <!-- Model 2 -->
+        <div class="model-container" id="model2-container">
+            <img src="assest/images/mejakerja.png" alt="gambar-model" />
+            <button class="ar-button" data-model="mejakerja.glb">Lihat dalam AR</button>
+        </div>
+        <!-- Model 3 -->
+        <div class="model-container" id="model3-container">
+            <img src="assest/images/mediumbed5.png" alt="gambar-model" />
+            <button class="ar-button" data-model="mediumbed5.glb">Lihat dalam AR</button>
+        </div>
+        <!-- Model 4 -->
+        <div class="model-container" id="model4-container">
+            <img src="assest/images/kursi.png" alt="gambar-model" />
+            <button class="ar-button" data-model="kursi.glb">Lihat dalam AR</button>
+        </div>
+    </div>
+
+    <!-- qr -->
+    <div id="qr-modal">
+        <div id="qr-code">
+            <h2>Scan QR Code untuk AR</h2>
+            <div id="qrcode"></div>
+            <button id="close-btn">Tutup</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Furniture Reviews</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
