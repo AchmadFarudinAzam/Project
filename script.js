@@ -57,14 +57,21 @@ initThreeJS('model4-container', 'kursi.glb');
 const qrModal = document.getElementById('qr-modal');
 const qrContainer = document.getElementById('qrcode');
 const closeBtn = document.getElementById('close-btn');
+const urlParams = new URLSearchParams(window.location.search);
+const model = urlParams.get('model');
+    if (model) {
+      document.getElementById('modelViewer').src = `assest/models/${model}`;
+    } else {
+      document.body.innerHTML = "<h1>Model Not Found!</h1>"
+    };
 
 function showQRCode(modelURL) {
     qrContainer.innerHTML = ""; // Bersihkan QR sebelumnya
     const modelViewerURL = `${window.location.origin}/viewer.html?model=${modelURL}`;
     const qrCode = new QRCode(qrContainer, {
         text: modelViewerURL,
-        width: 200,
-        height: 200
+        width: 500,
+        height: 500
     });
     qrModal.style.display = "flex";
 }
@@ -77,10 +84,3 @@ document.querySelectorAll('.ar-button').forEach(button => {
 closeBtn.addEventListener('click', () => {
     qrModal.style.display = "none";
 });
-const urlParams = new URLSearchParams(window.location.search);
-    const model = urlParams.get('model');
-    if (model) {
-      document.getElementById('modelViewer').src = `assest/models/${model}`;
-    } else {
-      document.body.innerHTML = "<h1>Model Not Found!</h1>"
-    };
