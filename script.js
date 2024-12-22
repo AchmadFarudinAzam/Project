@@ -71,10 +71,11 @@ function showQRCode(modelURL) {
     });
     if (model) {
       document.getElementById('modelViewer').src = `assest/models/${model}`;
+        qrModal.style.display = "flex";
     } else {
       document.body.innerHTML = "<h1>Model Not Found!</h1>"
-    };
-    qrModal.style.display = "flex";
+    }
+    
 }
 document.querySelectorAll('.ar-button').forEach(button => {
     button.addEventListener('click', () => {
