@@ -54,8 +54,7 @@ initThreeJS('model3-container', 'mediumbed5.glb');
 initThreeJS('model4-container', 'kursi.glb');
 
 const urlParams = new URLSearchParams(window.location.search);
-const modelURL = urlParams.get('model');
-document.querySelector('model-viewer').src = `assest/models/${modelURL}`;
+const model = urlParams.get('model');
 //set model viewer
 if (model) {
     document.getElementById('modelViewer').src = `assest/models/${model}`;
