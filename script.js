@@ -52,10 +52,6 @@ initThreeJS('model1-container', 'rak.glb');
 initThreeJS('model2-container', 'mejakerja.glb');
 initThreeJS('model3-container', 'mediumbed5.glb');
 initThreeJS('model4-container', 'kursi.glb');
-
-const urlParams = new URLSearchParams(window.location.search);
-    const model = urlParams.get('model');
-    //set model viewer
     
 //qr
 const qrModal = document.getElementById('qr-modal');
@@ -70,6 +66,8 @@ function showQRCode(modelURL) {
         width: 200,
         height: 200
     });
+    const urlParams = new URLSearchParams(window.location.search);
+    const model = urlParams.get('model');
     if (model) {
       document.getElementById('modelViewer').src = `assest/models/${model}`;
     } else {
