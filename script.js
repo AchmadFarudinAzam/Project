@@ -69,6 +69,11 @@ function showQRCode(modelURL) {
         width: 500,
         height: 500
     });
+    if (model) {
+      document.getElementById('modelViewer').src = `assest/models/${model}`;
+    } else {
+      document.body.innerHTML = "<h1>Model Not Found!</h1>"
+    };
     qrModal.style.display = "flex";
 }
 document.querySelectorAll('.ar-button').forEach(button => {
@@ -79,9 +84,4 @@ document.querySelectorAll('.ar-button').forEach(button => {
 });
 closeBtn.addEventListener('click', () => {
     qrModal.style.display = "none";
-}
- if (model) {
-      document.getElementById('modelViewer').src = `assest/models/${model}`;
-    } else {
-      document.body.innerHTML = "<h1>Model Not Found!</h1>"
-    });
+});
