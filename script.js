@@ -63,7 +63,7 @@ const closeBtn = document.getElementById('close-btn');
 
 function showQRCode(modelURL) {
     qrContainer.innerHTML = ""; // Bersihkan QR sebelumnya
-    const modelViewerURL = `${window.location.origin}/categories.html?model=${modelURL}`;
+    const modelViewerURL = `${window.location.origin}/viewer.html?model=${modelURL}`;
     const qrCode = new QRCode(qrContainer, {
         text: modelViewerURL,
         width: 200,
