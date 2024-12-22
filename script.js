@@ -68,12 +68,13 @@ function showQRCode(modelURL) {
         text: modelViewerURL,
         width: 500,
         height: 500
-    }if (model) {
+    });
+    qrModal.style.display = "flex";
+    if (model) {
       document.getElementById('modelViewer').src = `assest/models/${model}`;
     } else {
       document.body.innerHTML = "<h1>Model Not Found!</h1>"
-    });
-    qrModal.style.display = "flex";
+    }
 }
 document.querySelectorAll('.ar-button').forEach(button => {
     button.addEventListener('click', () => {
