@@ -56,6 +56,12 @@ initThreeJS('model4-container', 'kursi.glb');
 const urlParams = new URLSearchParams(window.location.search);
 const modelURL = urlParams.get('model');
 document.querySelector('model-viewer').src = `assest/models/${modelURL}`;
+//set model viewer
+if (model) {
+    document.getElementById('modelViewer').src = `assest/models/${model}`;
+} else {
+    document.body.innerHTML = "<h1>Model Not Found!</h1>"
+}
 //qr
 const qrModal = document.getElementById('qr-modal');
 const qrContainer = document.getElementById('qrcode');
