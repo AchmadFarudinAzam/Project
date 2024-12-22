@@ -69,9 +69,6 @@ function showQRCode(modelURL) {
         width: 500,
         height: 500
     });
-    if (model) {
-      document.getElementById('modelViewer').src = `assest/models/${model}`;
-    }
     qrModal.style.display = "flex";
 }
 document.querySelectorAll('.ar-button').forEach(button => {
