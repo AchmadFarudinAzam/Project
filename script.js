@@ -76,12 +76,12 @@ document.querySelectorAll('.ar-button').forEach(button => {
         const modelURL = button.getAttribute('data-model');
         showQRCode(modelURL);
     });
+});
+closeBtn.addEventListener('click', () => {
+    qrModal.style.display = "none";
 }
-if (model) {
+ if (model) {
       document.getElementById('modelViewer').src = `assest/models/${model}`;
     } else {
       document.body.innerHTML = "<h1>Model Not Found!</h1>"
     });
-closeBtn.addEventListener('click', () => {
-    qrModal.style.display = "none";
-});
