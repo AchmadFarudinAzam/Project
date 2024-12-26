@@ -6,17 +6,18 @@
 <body>
   
   <model-viewer id="modelViewer" src="assest/models/mejakerja.glb" alt="3D model" auto-rotate camera-controls></model-viewer>
+  <model-viewer id="modelViewer" src="assest/models/rak.glb" alt="3D model" auto-rotate carema-controls></model-viewer>
   
   <script src="script.js">
     const model = gltf.scene;
         model.scale.set(0.1, 0.1, 0.1);
         model.position.set(0, 0, -6);
-        scene.add(model);
+        scene.add(modelURL);
     //const urlParams = new URLSearchParams(window.location.search);
     //const model = urlParams.get('model');
     //set model viewer
-    if (model) {
-      document.getElementById('modelViewer').src = `assest/models/${model}`;
+    if (modelURL) {
+      document.getElementById('modelViewer').src = `assest/models/${modelURL}`;
     } else {
       document.body.innerHTML = "<h1>Model Not Found!</h1>"
     }
