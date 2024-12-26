@@ -58,7 +58,7 @@ const qrModal = document.getElementById('qr-modal');
 const qrContainer = document.getElementById('qrcode');
 const closeBtn = document.getElementById('close-btn');
 const urlParams = new URLSearchParams(window.location.search);
-const model = urlParams.get('modelURL');
+const model = urlParams.get('model');
     
 
 function showQRCode(modelURL) {
