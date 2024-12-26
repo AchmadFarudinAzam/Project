@@ -58,12 +58,12 @@ const qrModal = document.getElementById('qr-modal');
 const qrContainer = document.getElementById('qrcode');
 const closeBtn = document.getElementById('close-btn');
 const urlParams = new URLSearchParams(window.location.search);
-const model = urlParams.get('model');
+const model = urlParams.get('data-model');
     
 
 function showQRCode(modelURL) {
     qrContainer.innerHTML = ""; // Bersihkan QR sebelumnya
-    const modelViewerURL = `${window.location.origin}/viewer.html?model=${modelURL}`;
+    const modelViewerURL = `${window.location.origin}/viewer.html?data-model=${modelURL}`;
     const qrCode = new QRCode(qrContainer, {
         text: modelViewerURL,
         width: 500,
