@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitted Review</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .review-container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Submitted Review</h1>
+  <div id="submittedReview" class="review-container">
+    <!-- Data akan diisi melalui JavaScript -->
+  </div>
+  <a href="review.html">Back to Form</a>
+  <script>
+    // Ambil data dari sessionStorage
+    const reviewData = JSON.parse(sessionStorage.getItem('reviewData'));
+    const reviewContainer = document.getElementById('submittedReview');
+
+    if (reviewData) {
+      reviewContainer.innerHTML = `
+        <p><strong>Name:</strong> ${reviewData.name}</p>
+        <p><strong>Model:</strong> ${reviewData.model}</p>
+        <p><strong>Review:</strong> ${reviewData.review}</p>
+      `;
+    } else {
+      reviewContainer.innerHTML = '<p>No review submitted!</p>';
+    }
+  </script>
+</body>
+</html>
