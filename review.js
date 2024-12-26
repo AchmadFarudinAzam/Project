@@ -1,4 +1,5 @@
 document.getElementById('submitBtn').addEventListener('click', function () {
+  console.log('button clik')
   // Ambil nilai dari formulir
   const name = document.getElementById('name').value;
   const model = document.getElementById('model').value;
