@@ -1,24 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('submitBtn').addEventListener('click', function () {
-    console.log('Button clicked');
+document.getElementById('submitBtn').addEventListener('click', function (e) {
+  e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const model = document.getElementById('model').value;
-    const review = document.getElementById('review').value;
+  const name = document.getElementById('name').value;
+  const model = document.getElementById('model').value;
+  const review = document.getElementById('review').value;
 
-    if (name && model && review) {
-      const output = document.getElementById('output');
-      const reviewHTML = `
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Model:</strong> ${model}</p>
-        <p><strong>Review:</strong> ${review}</p>
-        <hr>
-      `;
-      output.innerHTML += reviewHTML;
+  if (name && model && review) {
+    // Simpan data ke sessionStorage
+    const reviewData = { name, model, review };
+    sessionStorage.setItem('reviewData', JSON.stringify(reviewData));
 
-      document.getElementById('reviewForm').reset();
-    } else {
-      alert('Please fill out all fields!');
-    }
-  });
+    // Arahkan ke halaman baru
+    window.location.href = 'submitted.html';
+  } else {
+    alert('Please fill out all fields!');
+  }
 });
