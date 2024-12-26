@@ -52,13 +52,13 @@ initThreeJS('model1-container', 'rak.glb');
 initThreeJS('model2-container', 'mejakerja.glb');
 initThreeJS('model3-container', 'mediumbed5.glb');
 initThreeJS('model4-container', 'kursi.glb');
-    
+
+const urlParams = new URLSearchParams(window.location.search);
+const model = urlParams.get('model');
 //qr
 const qrModal = document.getElementById('qr-modal');
 const qrContainer = document.getElementById('qrcode');
 const closeBtn = document.getElementById('close-btn');
-const urlParams = new URLSearchParams(window.location.search);
-const model = urlParams.get('data-model');
     
 
 function showQRCode(modelURL) {
