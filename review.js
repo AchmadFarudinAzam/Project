@@ -11,7 +11,7 @@ document.getElementById('submitBtn').addEventListener('click', function (e) {
     sessionStorage.setItem('reviewData', JSON.stringify(reviewData));
 
     // Arahkan ke halaman baru
-    window.location.href = 'submitted.html';
+    window.location.href = 'submited.html';
   } else {
     alert('Please fill out all fields!');
   }
